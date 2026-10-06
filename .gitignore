@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Java / Maven
+backend/target/
+*.class
+
+# Node
+node_modules/
+dist/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Archives
+*.zip

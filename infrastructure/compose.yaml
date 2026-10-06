@@ -1,0 +1,18 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: museflow-mongodb
+
+    ports:
+      - "127.0.0.1:27017:27017"
+
+    environment:
+      MONGO_INITDB_DATABASE: museflow
+
+    volumes:
+      - mongo_data:/data/db
+
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
