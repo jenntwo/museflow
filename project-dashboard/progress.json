@@ -1,0 +1,103 @@
+[
+    {
+      "name": "Repository & Monorepo",
+      "status": "done",
+      "detail": "GitHub repository and project structure"
+    },
+    {
+      "name": "React + TypeScript",
+      "status": "done",
+      "detail": "Frontend initialized with Vite"
+    },
+    {
+      "name": "Java 21 + Spring Boot",
+      "status": "done",
+      "detail": "Backend application initialized"
+    },
+    {
+      "name": "Docker",
+      "status": "done",
+      "detail": "Docker development environment"
+    },
+    {
+      "name": "MongoDB",
+      "status": "done",
+      "detail": "MongoDB container running"
+    },
+    {
+      "name": "Health REST API",
+      "status": "done",
+      "detail": "GET /api/v1/health"
+    },
+    {
+      "name": "JUnit + MockMvc",
+      "status": "done",
+      "detail": "Automated backend testing"
+    },
+    {
+      "name": "GitHub Baseline",
+      "status": "done",
+      "detail": "Application foundation pushed to GitHub"
+    },
+    {
+      "name": "Project Dashboard",
+      "status": "done",
+      "detail": "Engineering progress dashboard"
+    },
+    {
+      "name": "Museum Domain",
+      "status": "active",
+      "detail": "Museum model, repository, service and API"
+    },
+    {
+      "name": "Exhibition Domain",
+      "status": "todo",
+      "detail": "Exhibition management"
+    },
+    {
+      "name": "Artwork Domain",
+      "status": "todo",
+      "detail": "Artwork CRUD and validation"
+    },
+    {
+      "name": "Frontend API Integration",
+      "status": "todo",
+      "detail": "Connect React with Spring Boot"
+    },
+    {
+      "name": "Authentication & RBAC",
+      "status": "todo",
+      "detail": "JWT, Visitor, Curator and Admin roles"
+    },
+    {
+      "name": "QR Museum Guide",
+      "status": "todo",
+      "detail": "QR-based artwork experience"
+    },
+    {
+      "name": "AI Service",
+      "status": "todo",
+      "detail": "Node.js and Express AI service"
+    },
+    {
+      "name": "RAG Museum Guide",
+      "status": "todo",
+      "detail": "AI exhibit question answering"
+    },
+    {
+      "name": "Analytics",
+      "status": "todo",
+      "detail": "Visitor event analytics"
+    },
+    {
+      "name": "CI/CD",
+      "status": "todo",
+      "detail": "GitHub Actions"
+    },
+    {
+      "name": "Deployment",
+      "status": "todo",
+      "detail": "Production cloud deployment"
+    }
+  ]
+
