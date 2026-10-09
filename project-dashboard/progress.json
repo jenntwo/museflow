@@ -56,12 +56,12 @@
     },
     {
       "name": "Artwork Domain",
-      "status": "active",
+      "status": "done",
       "detail": "Artwork CRUD and validation"
     },
     {
       "name": "Frontend API Integration",
-      "status": "todo",
+      "status": "active",
       "detail": "Connect React with Spring Boot"
     },
     {
