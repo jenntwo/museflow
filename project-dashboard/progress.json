@@ -46,17 +46,17 @@
     },
     {
       "name": "Museum Domain",
-      "status": "active",
+      "status": "done",
       "detail": "Museum model, repository, service and API"
     },
     {
       "name": "Exhibition Domain",
-      "status": "todo",
+      "status": "done",
       "detail": "Exhibition management"
     },
     {
       "name": "Artwork Domain",
-      "status": "todo",
+      "status": "active",
       "detail": "Artwork CRUD and validation"
     },
     {
