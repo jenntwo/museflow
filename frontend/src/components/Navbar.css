@@ -1,0 +1,113 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(11, 12, 14, 0.75);
+    border-bottom: 1px solid transparent;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .navbar-scrolled {
+    background: rgba(11, 12, 14, 0.96);
+    border-bottom-color: var(--color-border);
+    backdrop-filter: blur(16px);
+  }
+  
+  .navbar-container {
+    max-width: var(--container-width);
+    min-height: 84px;
+    padding: 0 32px;
+    margin: 0 auto;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar-logo {
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--color-text);
+  }
+  
+  .navbar-logo span {
+    color: var(--color-accent);
+  }
+  
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+  }
+  
+  .navbar-link {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #a8a8a8;
+    transition: color 0.25s ease;
+  }
+  
+  .navbar-link:hover,
+  .navbar-link-active {
+    color: var(--color-accent);
+  }
+  
+  .navbar-menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--color-text);
+    font-size: 24px;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-container {
+      min-height: 72px;
+      padding: 0 20px;
+    }
+  
+    .navbar-logo {
+      font-size: 20px;
+    }
+  
+    .navbar-menu-toggle {
+      display: block;
+    }
+  
+    .navbar-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+  
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+  
+      padding: 16px 24px;
+      background: var(--color-background);
+      border-bottom: 1px solid var(--color-border);
+    }
+  
+    .navbar-links-open {
+      display: flex;
+    }
+  
+    .navbar-link {
+      width: 100%;
+      padding: 16px 0;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .navbar,
+    .navbar-link {
+      transition: none;
+    }
+  }
