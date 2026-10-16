@@ -81,5 +81,5 @@ jobs:
       - name: Make Maven wrapper executable
         run: chmod +x mvnw
 
-      - name: Build Spring Boot
-        run: ./mvnw -B clean package -DskipTests
+      - name: Test and Build Spring Boot
+        run: ./mvnw -B clean verify
