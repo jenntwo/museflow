@@ -6,6 +6,7 @@ import {
   ArtworkNotFoundError,
 } from "../services/artworkService.js";
 import { buildConversation } from "../services/conversationService.js";
+import { aiRateLimiter } from "../middleware/aiRateLimiter.js";
 
 const router = Router();
 
@@ -20,7 +21,7 @@ interface ConversationMessage {
     history?: ConversationMessage[];
   }
 
-router.post("/chat", async (req, res) => {
+router.post("/chat",aiRateLimiter, async (req, res) => {
     const { artworkId, message, history = [] } =
     (req.body ?? {}) as Partial<ChatRequest>;
 

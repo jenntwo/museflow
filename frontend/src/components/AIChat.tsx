@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import "./AIChat.css";
 import { sendAIChatMessage } from "../api/ai";
 
+
 const SUGGESTED_QUESTIONS = [
     "What inspired this artwork?",
     "What techniques did the artist use?",

@@ -3,7 +3,7 @@ package com.museflow.backend.artwork.controller;
 import com.museflow.backend.artwork.dto.CreateArtworkRequest;
 import com.museflow.backend.artwork.model.Artwork;
 import com.museflow.backend.artwork.service.ArtworkService;
-
+import com.museflow.backend.exception.ResourceNotFoundException;
 import jakarta.validation.Valid;
 
 import org.springframework.http.HttpStatus;
@@ -15,6 +15,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -70,12 +72,15 @@ public class ArtworkController {
         public ResponseEntity<Artwork> getArtworkById(
                         @PathVariable String id) {
 
-                return artworkService
+                Artwork artwork = artworkService
                                 .getArtworkById(id)
-                                .map(ResponseEntity::ok)
-                                .orElseGet(
-                                                () -> ResponseEntity.notFound().build());
+                                .orElseThrow(() -> new ResourceNotFoundException(
+                                                "Artwork not found: " + id));
+
+                return ResponseEntity.ok(artwork);
         }
+
+        
 
         @Operation(summary = "Get artworks by exhibition", description = "Retrieve all artworks belonging to a specific exhibition.")
         @ApiResponse(responseCode = "200", description = "Artworks retrieved successfully") // Get Artworks By

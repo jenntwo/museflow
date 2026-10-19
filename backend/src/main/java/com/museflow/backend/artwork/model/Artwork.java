@@ -1,7 +1,12 @@
+
 package com.museflow.backend.artwork.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 @Document(collection = "artworks")
 public class Artwork {
@@ -9,10 +14,19 @@ public class Artwork {
     @Id
     private String id;
 
+    @NotBlank(message = "Exhibition ID is required")
     private String exhibitionId;
+
+    @NotBlank(message = "Title is required")
     private String title;
+
+    @NotBlank(message = "Artist is required")
     private String artist;
+
+    @NotNull(message = "Year is required")
+    @Positive(message = "Year must be positive")
     private Integer yearCreated;
+
     private String medium;
     private String description;
     private String imageUrl;
@@ -27,8 +41,7 @@ public class Artwork {
             Integer yearCreated,
             String medium,
             String description,
-            String imageUrl
-    ) {
+            String imageUrl) {
         this.exhibitionId = exhibitionId;
         this.title = title;
         this.artist = artist;

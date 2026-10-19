@@ -1,5 +1,6 @@
 import type { Artwork } from "../types/artwork.js";
 
+
 export interface ConversationMessage {
   role: "user" | "assistant";
   content: string;
