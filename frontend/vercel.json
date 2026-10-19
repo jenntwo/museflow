@@ -1,0 +1,18 @@
+
+{
+    "rewrites": [
+      {
+        "source": "/api/v1/ai/:path*",
+        "destination": "https://museflow-ai-service.onrender.com/api/v1/ai/:path*"
+      },
+      {
+        "source": "/api/v1/:path*",
+        "destination": "https://museflow-backend.onrender.com/api/v1/:path*"
+      },
+      {
+        "source": "/(.*)",
+        "destination": "/index.html"
+      }
+    ]
+  }
+  
