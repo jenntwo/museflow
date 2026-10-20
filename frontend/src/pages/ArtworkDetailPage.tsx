@@ -102,41 +102,75 @@ export default function ArtworkDetailPage() {
           alignItems: "center",
         }}
       >
-        {/* Artwork Image */}
-        <div
+        
+{/* Artwork Image */}
+<div
   style={{
     width: "100%",
-    background: "transparent",
+    minHeight: "300px",
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    gap: "16px",
   }}
 >
-          {artwork.imageUrl && !imageFailed ? (
-            <img
-            src={artwork.imageUrl}
-            alt={artwork.title}
-            onError={() => setImageFailed(true)}
-            style={{
-              display: "block",
-              width: "100%",
-              height: "auto",
-              maxHeight: "75vh",
-              objectFit: "contain",
-            }}
-          />
-          ) : (
-            <span
-              style={{
-                color: "var(--color-muted)",
-                fontSize: "12px",
-                letterSpacing: "0.15em",
-              }}
-            >
-              IMAGE UNAVAILABLE
-            </span>
-          )}
-        </div>
+  {artwork.imageUrl && !imageFailed ? (
+    <img
+      key={artwork.imageUrl}
+      src={artwork.imageUrl}
+      alt={artwork.title}
+      onLoad={() => {
+        console.log("Artwork image loaded:", artwork.imageUrl);
+      }}
+      onError={() => {
+        console.error("Artwork image failed:", artwork.imageUrl);
+        setImageFailed(true);
+      }}
+      style={{
+        display: "block",
+        width: "100%",
+        height: "auto",
+        maxHeight: "75vh",
+        objectFit: "contain",
+      }}
+    />
+  ) : (
+    <div
+      style={{
+        width: "100%",
+        padding: "24px",
+        border: "1px solid #555",
+        overflowWrap: "anywhere",
+        color: "#aaa",
+        fontSize: "13px",
+      }}
+    >
+      <p>IMAGE UNAVAILABLE</p>
+
+      <p>
+        Reason:{" "}
+        {!artwork.imageUrl
+          ? "No imageUrl returned by API"
+          : "Image URL failed to load"}
+      </p>
+
+      <p>Image URL: {artwork.imageUrl || "NULL"}</p>
+
+      {artwork.imageUrl && (
+        <a
+          href={artwork.imageUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#c9a96e" }}
+        >
+          Open image directly ↗
+        </a>
+      )}
+    </div>
+  )}
+</div>
+
 
         {/* Artwork Information */}
         <div>
